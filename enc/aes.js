@@ -1,13 +1,14 @@
 const CryptoJS = require("crypto-js");
+const config = require("./../core/config");
 
 class Aes {
     
-    constructor(password, serialNo) {
+    constructor() {
         // 加密模式
         this.mode = CryptoJS.mode.CFB;
         this.padding = CryptoJS.pad.Pkcs7;
-        this.key = CryptoJS.enc.Utf8.parse(password);
-        this.iv = CryptoJS.enc.Utf8.parse(serialNo);
+        this.key = CryptoJS.enc.Utf8.parse(config.password);
+        this.iv = CryptoJS.enc.Utf8.parse(config.key);
     }
 
     /**

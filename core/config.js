@@ -1,5 +1,8 @@
+const path = require("path");
 const Config = {
-    dbPath: "../res/data.db"
+    dbPath: path.join(__dirname, "../db"),
+    password: "123",
+    key: "abc"
 }
 
 module.exports = Config

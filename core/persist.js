@@ -1,5 +1,7 @@
 const fs = require("fs")
 const Aes = require("./../enc/aes").Aes;
+const config = require("./config")
+const path = require("path")
 
 /**
  * 持久化
@@ -7,23 +9,31 @@ const Aes = require("./../enc/aes").Aes;
 class Persist {
 
     saveData(name, data) {
-        const aes = new Aes('1234', 'abcd');
-        data = aes.encrypt(data);
-        console.log(aes.decrypt(data));
-        fs.writeFile(name, data, function(err) {
-            if (err) {
-                return console.error(err);
-            }
+        const aes = new Aes();
+        data = aes.encrypt(JSON.stringify(data));
+        let path = this.resolvePath(name);
+        fs.writeFile(path, data, function(err) {
+            console.error(err);
         });
+    }
+
+    readData(name) {
+        let path = this.resolvePath(name);
+        let data = fs.readFileSync(path);
+        const aes = new Aes();
+        data = aes.decrypt(data.toString());
+        return JSON.parse(data);
+    }
+
+    list() {
+        let files = fs.readdirSync(config.dbPath);
+        console.log(files);
+        return files;
+    }
+
+    resolvePath(name) {
+        return path.join(config.dbPath, name);
     }
 }
 
-let data = {
-    name: 'liu',
-    age: 25,
-    hobby: 'watch tv',
-    abc: 'efg'
-}
-
-let persist = new Persist();
-persist.saveData('testing', JSON.stringify(data));
+exports.Persist = Persist;

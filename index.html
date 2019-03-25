@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="index.js"></script>
 </head>
 <body>
-    <h1>Hello Electron!!</h1>
+    <button onclick="list()">list</button>
+    <hr/>
+    ID:<input id="id" type="text" />
+    <button onclick="detail()">detail</button>
+    <hr/>
+    title:<input id="title" type="text" />
+    <hr/>
+    content:<textarea id="content" cols="40" rows="20">
+
+
+    </textarea>
+    <button onclick="saveNote()">save</button>
 </body>
 </html>
