@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Funnote</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="index.js"></script>
 </head>
-<body>
-    <button onclick="list()">list</button>
+<body onload="list()">
+    <ul id="list">
+        
+    </ul>
+
     <hr/>
     ID:<input id="id" type="text" />
     <button onclick="detail()">detail</button>
@@ -20,6 +23,7 @@
 
 
     </textarea>
-    <button onclick="saveNote()">save</button>
+    <button class="btn btn-primary" onclick="saveNote()">save</button>
+    <button class="btn btn-danger" onclick="del()">del</button>
 </body>
 </html>
