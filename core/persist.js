@@ -12,9 +12,7 @@ class Persist {
         const aes = new Aes();
         data = aes.encrypt(JSON.stringify(data));
         let path = this.resolvePath(name);
-        fs.writeFile(path, data, function(err) {
-            console.error(err);
-        });
+        fs.writeFileSync(path, data);
     }
 
     readData(name) {
@@ -31,9 +29,14 @@ class Persist {
         return files;
     }
 
+    del(id) {
+        let path = this.resolvePath(id);
+        fs.unlinkSync(path)
+    }
+
     resolvePath(name) {
         return path.join(config.dbPath, name);
     }
 }
 
-exports.Persist = Persist;
+module.exports = Persist;
