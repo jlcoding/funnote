@@ -17,12 +17,19 @@
     "sqlite3": "^4.0.6"
   },
   "dependencies": {
+    "asn1": "^0.2.4",
     "assert-plus": "^1.0.0",
     "bootstrap": "^4.3.1",
+    "cos-nodejs-sdk-v5": "^2.5.7",
     "crypto-js": "3.1.9-1",
+    "delayed-stream": "^1.0.0",
+    "ecc-jsbn": "^0.2.0",
     "jquery": "^3.3.1",
+    "jsprim": "^2.0.0",
     "path": "^0.12.7",
     "popper": "^1.0.1",
+    "sshpk": "^1.16.1",
+    "tweetnacl": "^1.0.1",
     "uuid": "^3.3.2"
   }
 }

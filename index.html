@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +9,36 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="index.js"></script>
 </head>
+
 <body onload="list()">
-    <ul id="list">
-        
-    </ul>
+    <div class="container">
+        <ul id="list" class="col-md-4">
 
-    <hr/>
-    ID:<input id="id" type="text" />
-    <button onclick="detail()">detail</button>
-    <hr/>
-    title:<input id="title" type="text" />
-    <hr/>
-    content:<textarea id="content" cols="40" rows="20">
+        </ul>
 
+        <div class="col-md-8">
+            <div class="col-md-12">
+                ID:<input id="id" type="text" />
+                <hr />
+                title:<input id="title" type="text" />
+                <hr />
+                content:<textarea id="content" cols="40" rows="20"></textarea>
+                <hr/>
+                createTime:<input id="createTime" type="text" />
+                <hr/>
+                updateTime:<input id="updateTime" type="text" />
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-offset-1 col-md-4">
+                    <button class="btn btn-primary" onclick="saveNote()">save</button>
+                </div>
+                <div class="col-md-offset-1 col-md-4">
+                    <button class="btn btn-danger" onclick="del()">del</button>
+                </div>
+            </div>
 
-    </textarea>
-    <button class="btn btn-primary" onclick="saveNote()">save</button>
-    <button class="btn btn-danger" onclick="del()">del</button>
+        </div>
+    </div>
 </body>
+
 </html>

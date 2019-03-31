@@ -1,8 +1,19 @@
-# funnote
+# Funnote
+---
+### ToDo:
+- ~~persist~~
+- ~~list~~
+- ~~save with id~~
+- ~~delete~~
+- ~~cos~~
+- syncer
+- folder & path
+- lock
+- multi client edit
+- multi cloud repository config
+- setting
+- UI
 
-# 笔记Notes
-1. xx.data - xx.index 数据文件&id 索引文件
-2. list
-3. save with id
-3. delete
 
+### 备忘
+1.db中分文件夹存储  db/notes db/folder db/config ...
